@@ -23,6 +23,7 @@ def runfile(name1_cpp,name2_cpp):
         print("error in %s.file"%(name1_cpp))
         print(x)
         quit()
+    else: print("file %s complied"%(name1_cpp))
             
 if checkfile(test_cpp,task_cpp,currpos)==False: 
     print("Put task and test file in the sameplace as maketest file")
