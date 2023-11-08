@@ -10,10 +10,10 @@ test_exe='%s.exe' %(test)
 task_exe='%s.exe' %(task)
 check1=False
 
-def checkfile(name1,name2,path): 
+def checkfile(name2,path): 
     for files in os.walk(path): 
         for check in files: 
-            if name1 in check and name2 in check: 
+            if name2 in check: 
                 return True
     return False
 
@@ -24,10 +24,16 @@ def runfile(name1_cpp,name2_cpp):
         print(x)
         quit()
     else: print("file %s complied"%(name1_cpp))
-            
-if checkfile(test_cpp,task_cpp,currpos)==False: 
-    print("Put task and test file in the sameplace as maketest file")
-    quit()
+
+if test!="":
+    if(checkfile(test_cpp,currpos))==False:
+        print("Put test file in the sameplace as maketest file")
+        quit()
+
+if task!="":
+    if(checkfile(task_cpp,currpos))==False: 
+        print("Put task file in the sameplace as maketest file")
+        quit()
 
 runfile(test_cpp,test_exe)
 
